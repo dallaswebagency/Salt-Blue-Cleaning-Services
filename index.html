@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt Blue Cleaning Services | Residential, Commercial & Post Construction Cleaning in Canmore & Banff</title>
+<meta name="description" content="Salt Blue Cleaning Services: local, reliable, consistent residential, commercial and post construction cleaning in the Bow Valley, serving Canmore and Banff, Alberta.">
+<link rel="icon" href="images/salt-blue-icon.png">
+<style>
+@font-face{font-family:'Big Shoulders Display';font-weight:700;font-display:swap;src:url(fonts/big-shoulders-display-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Big Shoulders Display';font-weight:800;font-display:swap;src:url(fonts/big-shoulders-display-latin-800-normal.woff2) format('woff2')}
+@font-face{font-family:'Big Shoulders Display';font-weight:900;font-display:swap;src:url(fonts/big-shoulders-display-latin-900-normal.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-weight:400;font-display:swap;src:url(fonts/instrument-sans-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-weight:500;font-display:swap;src:url(fonts/instrument-sans-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-weight:600;font-display:swap;src:url(fonts/instrument-sans-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-weight:700;font-display:swap;src:url(fonts/instrument-sans-latin-700-normal.woff2) format('woff2')}
+:root{
+  --ink:#0b1038;
+  --ink-2:#161d55;
+  --blue:#1f3be0;
+  --sky:#2aa7f5;
+  --salt:#f5f8fc;
+  --mist:#e5edf8;
+  --line:#cfdbec;
+  --text:#2a3152;
+  --muted:#5d6788;
+  --grad:linear-gradient(120deg,#1f3be0 0%,#2a7cf0 55%,#2aa7f5 100%);
+  --display:'Big Shoulders Display',Impact,sans-serif;
+  --body:'Instrument Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--text);background:var(--salt);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1240px,92vw);margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}
+.eyebrow::before{content:"";width:9px;height:9px;background:var(--grad);transform:rotate(45deg)}
+h1,h2,h3{font-family:var(--display);color:var(--ink);line-height:.95;letter-spacing:.005em;text-transform:uppercase}
+h2{font-size:clamp(44px,5.6vw,78px);font-weight:800}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;letter-spacing:.04em;padding:16px 26px;border-radius:2px;transition:.25s;cursor:pointer;border:0;font-family:var(--body)}
+.btn-blue{background:var(--grad);color:#fff;box-shadow:0 10px 24px -10px rgba(31,59,224,.7)}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(31,59,224,.8)}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn svg{width:16px;height:16px}
+
+/* top bar */
+.topbar{background:var(--ink);color:#c9d4f3;font-size:14px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding:9px 0;gap:20px;flex-wrap:wrap}
+.topbar a:hover{color:#fff}
+.topbar .tb-left{display:flex;gap:22px;align-items:center}
+.topbar .tb-right{display:flex;gap:22px}
+.topbar .pin{display:inline-flex;gap:8px;align-items:center}
+.topbar .pin i{width:7px;height:7px;background:var(--sky);transform:rotate(45deg);display:inline-block}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(245,248,252,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:86px}
+.logo img{height:56px;width:auto}
+nav ul{display:flex;gap:34px;list-style:none;font-weight:600;font-size:15px;color:var(--ink)}
+nav li{position:relative}
+nav a{padding:8px 0;position:relative}
+nav a::after{content:"";position:absolute;left:0;bottom:2px;height:2px;width:0;background:var(--grad);transition:.3s}
+nav a:hover::after,nav a.on::after{width:100%}
+.dd{position:absolute;top:100%;left:-18px;background:#fff;border:1px solid var(--line);min-width:250px;padding:10px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s;box-shadow:0 20px 40px -20px rgba(11,16,56,.3)}
+nav li:hover .dd{opacity:1;visibility:visible;transform:none}
+.dd a{display:block;padding:9px 20px;font-weight:500;font-size:14.5px}
+.dd a:hover{background:var(--salt);color:var(--blue)}
+.dd a::after{display:none}
+.menu-btn{display:none;background:none;border:0;cursor:pointer}
+.menu-btn span{display:block;width:26px;height:2px;background:var(--ink);margin:6px 0}
+
+/* hero */
+.hero{position:relative;display:grid;grid-template-columns:1.02fr 1fr;min-height:calc(100vh - 128px);min-height:720px}
+.hero-copy{padding:80px 6vw 120px max(4vw,calc((100vw - 1240px)/2));display:flex;flex-direction:column;justify-content:center;position:relative}
+.hero-copy .loc{font-size:14px;font-weight:600;color:var(--muted);letter-spacing:.06em;margin-bottom:26px;display:flex;align-items:center;gap:12px}
+.hero-copy .loc b{color:var(--ink)}
+.hero h1{font-size:clamp(78px,9.2vw,148px);font-weight:900;line-height:.86}
+.hero h1 span{display:block}
+.hero h1 .o{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.hero h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-copy p.lead{font-size:20px;max-width:430px;margin:30px 0 36px;color:var(--text)}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-media{position:relative;overflow:hidden}
+.hero-media img{width:100%;height:100%;object-fit:cover}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,16,56,.35),rgba(11,16,56,0) 40%)}
+.quote-card{position:absolute;z-index:5;right:max(4vw,calc((100vw - 1240px)/2));bottom:-70px;width:400px;background:#fff;padding:30px 30px 26px;box-shadow:0 40px 70px -30px rgba(11,16,56,.45);border-top:4px solid transparent;border-image:var(--grad) 1}
+.quote-card h3{font-size:34px;font-weight:800;margin-bottom:4px}
+.quote-card .sub{font-size:14px;color:var(--muted);margin-bottom:18px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field{display:flex;flex-direction:column;margin-bottom:10px}
+.field label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-bottom:5px}
+.field input,.field select,.field textarea{font:inherit;font-size:15px;color:var(--ink);background:var(--salt);border:1px solid var(--line);padding:12px 13px;border-radius:2px;outline:none;transition:.2s;width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 3px rgba(31,59,224,.12)}
+.quote-card .btn{width:100%;justify-content:center;margin-top:6px}
+.form-note{font-size:12.5px;color:var(--muted);margin-top:10px;text-align:center}
+.form-ok{display:none;background:#eaf4ff;border-left:3px solid var(--blue);padding:10px 12px;font-size:14px;color:var(--ink);margin-top:10px}
+
+/* values ribbon */
+.ribbon{background:var(--ink);color:#fff;position:relative;z-index:1}
+.ribbon .wrap{display:flex;gap:46px;align-items:center;padding:30px 0;padding-right:430px}
+.ribbon .item{white-space:nowrap;display:flex;align-items:center;gap:14px;font-family:var(--display);font-size:28px;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
+.ribbon .item i{width:12px;height:12px;background:var(--grad);transform:rotate(45deg)}
+
+/* about */
+.about{padding:150px 0 120px}
+.about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:80px;align-items:center}
+.about-visual{position:relative;height:600px}
+.about-visual .a1{position:absolute;left:0;top:0;width:76%;height:82%;object-fit:cover}
+.about-visual .frame{position:absolute;left:22px;top:22px;width:76%;height:82%;border:1.5px solid var(--blue);z-index:-1}
+.about-visual .a2{position:absolute;right:0;bottom:0;width:250px;height:250px;object-fit:cover;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.about-visual .stamp{position:absolute;right:30px;top:40px;width:120px;height:120px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 20px 40px -20px rgba(11,16,56,.35)}
+.about-visual .stamp img{width:62px}
+.about-copy h2{margin:18px 0 26px}
+.about-copy .belief{font-size:24px;line-height:1.4;color:var(--ink);font-weight:500;border-left:3px solid var(--blue);padding-left:22px;margin-bottom:24px}
+.about-copy .belief strong{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.about-copy p{color:var(--text);margin-bottom:34px;max-width:560px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.pillar{padding:22px 18px 0 0}
+.pillar+.pillar{padding-left:20px;border-left:1px solid var(--line)}
+.pillar .n{font-family:var(--display);font-size:15px;font-weight:700;color:var(--blue);letter-spacing:.1em}
+.pillar h3{font-size:30px;font-weight:800;margin-top:6px}
+
+/* services */
+.services{background:#fff;padding:120px 0;position:relative;overflow:hidden}
+.services::before{content:"";position:absolute;right:-180px;top:-180px;width:520px;height:520px;border:1.5px solid var(--mist);transform:rotate(45deg)}
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:60px;position:relative}
+.svc-head h2{margin-top:16px}
+.svc-head p{max-width:400px;color:var(--muted)}
+.svc-pair{display:grid;grid-template-columns:1fr 1fr;gap:28px;position:relative}
+.svc{background:var(--salt);display:flex;flex-direction:column;transition:.3s}
+.svc:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(11,16,56,.35)}
+.svc .ph{position:relative;height:330px;overflow:hidden}
+.svc .ph img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.svc:hover .ph img{transform:scale(1.05)}
+.svc .tag{position:absolute;left:0;bottom:0;background:var(--ink);color:#fff;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:10px 18px}
+.svc .bd{padding:34px 34px 36px;display:flex;flex-direction:column;flex:1}
+.svc h3{font-size:44px;font-weight:800;margin-bottom:14px}
+.svc p{color:var(--text);margin-bottom:20px}
+.svc ul{list-style:none;margin-bottom:26px;display:flex;flex-wrap:wrap;gap:8px}
+.svc li{font-size:14px;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--line);padding:7px 14px}
+.svc .links{margin-top:auto;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.arrow-link{font-weight:700;color:var(--blue);display:inline-flex;gap:8px;align-items:center;font-size:15px}
+.arrow-link:hover{gap:13px}
+.arrow-link{transition:gap .2s}
+
+/* post construction feature */
+.post{margin-top:28px;display:grid;grid-template-columns:1.1fr 1fr;background:var(--ink);color:#d6def6;position:relative}
+.post .ph{position:relative;min-height:440px}
+.post .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.post .bd{padding:60px 56px;display:flex;flex-direction:column;justify-content:center}
+.post .eyebrow{color:var(--sky)}
+.post h3{color:#fff;font-size:clamp(46px,4.6vw,66px);font-weight:800;margin:16px 0 20px}
+.post p{margin-bottom:30px;max-width:480px}
+.post .links{display:flex;gap:14px;flex-wrap:wrap}
+.post .btn-line{border-color:#fff;color:#fff}
+.post .btn-line:hover{background:#fff;color:var(--ink)}
+
+/* bow valley band */
+.valley{position:relative;min-height:620px;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.valley img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.valley::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,16,56,0) 25%,rgba(11,16,56,.88) 100%)}
+.valley .wrap{position:relative;z-index:2;padding-bottom:70px;display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:end}
+.valley h2{color:#fff;font-size:clamp(52px,7vw,110px)}
+.valley h2 em{font-style:normal;color:transparent;-webkit-text-stroke:2px #fff}
+.towns{display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(255,255,255,.35)}
+.town{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.35);font-family:var(--display);font-size:38px;font-weight:700;text-transform:uppercase}
+.town small{font-family:var(--body);font-size:13px;letter-spacing:.14em;font-weight:600;opacity:.8}
+
+/* contact */
+.contact{padding:120px 0}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px}
+.contact-info h2{margin:16px 0 22px}
+.contact-info p.intro{color:var(--muted);margin-bottom:36px;max-width:400px}
+.c-list{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.c-item{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
+.c-ico{width:52px;height:52px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--blue)}
+.c-ico svg{width:22px;height:22px}
+.c-item small{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.c-item a,.c-item span{font-weight:600;color:var(--ink);font-size:18px}
+.c-item a:hover{color:var(--blue)}
+.socials{display:flex;gap:10px;margin-top:28px}
+.socials a{width:46px;height:46px;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);transition:.2s;background:#fff}
+.socials a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.socials svg{width:19px;height:19px}
+.big-form{background:#fff;padding:46px 46px 40px;border:1px solid var(--line);position:relative}
+.big-form::before{content:"";position:absolute;left:0;top:0;width:100%;height:5px;background:var(--grad)}
+.big-form h3{font-size:40px;font-weight:800;margin-bottom:6px}
+.big-form .sub{color:var(--muted);font-size:15px;margin-bottom:26px}
+.f3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.pref{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.pref label{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--salt);padding:10px 16px;font-size:14.5px;font-weight:600;color:var(--ink);cursor:pointer}
+.pref input{accent-color:var(--blue)}
+.big-form .btn{margin-top:8px}
+
+/* footer */
+footer{background:var(--ink);color:#aeb9df;padding-top:80px;font-size:15px}
+.f-top{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:50px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,.12)}
+.f-logo{background:#fff;display:inline-block;padding:16px 20px;margin-bottom:22px}
+.f-logo img{height:50px;width:auto}
+.f-tag{font-family:var(--display);font-size:26px;font-weight:700;color:#fff;text-transform:uppercase;line-height:1.05}
+footer h4{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:18px}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+footer ul a:hover{color:#fff}
+footer .socials a{background:transparent;border-color:rgba(255,255,255,.2);color:#fff}
+footer .socials a:hover{background:#fff;color:var(--ink)}
+.f-bot{display:flex;justify-content:space-between;padding:24px 0;font-size:14px;gap:20px;flex-wrap:wrap}
+.f-bot a{color:#fff;font-weight:600}
+.f-bot a:hover{color:var(--sky)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+
+/* responsive */
+@media(max-width:1100px){
+  nav{display:none}
+  .menu-btn{display:block}
+  nav.open{display:block;position:absolute;top:86px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:20px 4vw}
+  nav.open ul{flex-direction:column;gap:6px}
+  nav.open .dd{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 0 14px}
+  header .hdr-cta{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-copy{padding:70px 4vw 60px}
+  .hero-media{height:520px}
+  .quote-card{position:relative;right:auto;bottom:auto;width:auto;margin:-120px 4vw 0}
+  .ribbon .wrap{padding-right:0;flex-wrap:wrap;gap:22px}
+  .about{padding:90px 0}
+  .about-grid,.contact-grid,.valley .wrap,.post{grid-template-columns:1fr}
+  .svc-head{flex-direction:column;align-items:flex-start}
+  .f-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .topbar .tb-right{display:none}
+  .svc-pair,.f-row,.f3,.f-top{grid-template-columns:1fr}
+  .about-visual{height:440px}
+  .about-visual .a2{width:170px;height:170px}
+  .about-visual .stamp{width:90px;height:90px}
+  .pillars{grid-template-columns:1fr}
+  .pillar+.pillar{padding-left:0;border-left:0}
+  .post .bd,.big-form{padding:38px 24px}
+  .svc .bd{padding:28px 24px}
+  .logo img{height:44px}
+  .hero h1{font-size:72px}
+  .town{font-size:30px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-left">
+      <span class="pin"><i></i>Bow Valley, Alberta</span>
+      <span>Serving Canmore &amp; Banff</span>
+    </div>
+    <div class="tb-right">
+      <a href="tel:+14034976311">(403) 497-6311</a>
+      <a href="mailto:saltbluecleaning@gmail.com">saltbluecleaning@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <a href="#" class="logo"><img src="images/salt-blue-logo.png" alt="Salt Blue Cleaning Services"></a>
+    <nav id="nav">
+      <ul>
+        <li><a href="#" class="on">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a>
+          <div class="dd">
+            <a href="#services">Service List</a>
+            <a href="#services">Residential Clean</a>
+            <a href="#services">Standard Clean</a>
+            <a href="#services">Deep Clean</a>
+            <a href="#services">Move-In/Move-Out Clean</a>
+            <a href="#services">Commercial Clean</a>
+            <a href="#post-construction">Post Construction Cleaning</a>
+          </div>
+        </li>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="btn btn-blue hdr-cta">Request a Quote</a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="loc"><b>Salt Blue Cleaning Services</b> · Canmore &amp; Banff</div>
+    <h1><span>Local.</span><span class="o">Reliable.</span><span class="g">Consistent.</span></h1>
+    <p class="lead">Consistent, on-time service you can count on.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-blue">Contact Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#services" class="btn btn-line">Our Services</a>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="images/hero-kitchen.jpg" alt="Spotless modern kitchen cleaned by Salt Blue Cleaning Services">
+  </div>
+  <form class="quote-card" id="quickForm" novalidate>
+    <h3>Request a Quote</h3>
+    <div class="sub">Tell us a little about your space and we'll get back to you.</div>
+    <div class="f-row">
+      <div class="field"><label for="q-name">First name</label><input id="q-name" name="name" required></div>
+      <div class="field"><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel"></div>
+    </div>
+    <div class="field"><label for="q-email">Email</label><input id="q-email" name="email" type="email" required></div>
+    <div class="field"><label for="q-service">Select Service</label>
+      <select id="q-service" name="service" required>
+        <option value="">Choose a service</option>
+        <option>Residential Clean</option>
+        <option>Standard Clean</option>
+        <option>Deep Clean</option>
+        <option>Move-In/Move-Out Clean</option>
+        <option>Commercial Clean</option>
+        <option>Post Construction Cleaning</option>
+      </select>
+    </div>
+    <button class="btn btn-blue" type="submit">Send Message</button>
+    <div class="form-ok">Thanks! Your email app will open with your request ready to send.</div>
+  </form>
+</section>
+
+<div class="ribbon">
+  <div class="wrap">
+    <div class="item"><i></i>Residential</div>
+    <div class="item"><i></i>Commercial</div>
+    <div class="item"><i></i>Post Construction</div>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-visual rv">
+      <div class="frame"></div>
+      <img class="a1" src="images/about-kitchen.jpg" alt="Freshly cleaned bright kitchen">
+      <img class="a2" src="images/commercial-glass-entrance.jpg" alt="Clean commercial glass entrance">
+      <div class="stamp"><img src="images/salt-blue-icon.png" alt=""></div>
+    </div>
+    <div class="about-copy rv">
+      <span class="eyebrow">About Salt Blue Cleaning Services</span>
+      <h2>Every space left spotless and ready for use.</h2>
+      <div class="belief">At Salt Blue Cleaning Services, we believe in <strong>reliability</strong>: consistent, on-time service you can count on.</div>
+      <p>We are committed to delivering high-quality cleaning solutions tailored to your needs. With a strong focus on detail, reliability, and consistency, we ensure every space we handle is left spotless and ready for use.</p>
+      <div class="pillars">
+        <div class="pillar"><div class="n">01</div><h3>Detail</h3></div>
+        <div class="pillar"><div class="n">02</div><h3>Reliability</h3></div>
+        <div class="pillar"><div class="n">03</div><h3>Consistency</h3></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="svc-head rv">
+      <div><span class="eyebrow">What we do</span><h2>Services We Provide</h2></div>
+      <p>Residential, commercial and post construction cleaning across the Bow Valley, with flexible scheduling built around you.</p>
+    </div>
+    <div class="svc-pair">
+      <article class="svc rv">
+        <div class="ph"><img src="images/residential-home.jpg" alt="Bow Valley home cared for by Salt Blue residential cleaning"><span class="tag">For your home</span></div>
+        <div class="bd">
+          <h3>Residential Cleaning</h3>
+          <p>We provide thorough, customizable cleans with flexible scheduling and consistent, high-quality results. Your clean is our clean.</p>
+          <ul><li>Standard Clean</li><li>Deep Clean</li><li>Move-In/Move-Out Clean</li></ul>
+          <div class="links"><a href="#" class="arrow-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+      </article>
+      <article class="svc rv">
+        <div class="ph"><img src="images/commercial-office.jpg" alt="Clean modern office space"><span class="tag">For your business</span></div>
+        <div class="bd">
+          <h3>Commercial Cleaning</h3>
+          <p>Our team provides consistent, thorough cleaning that creates a healthy, professional, and welcoming environment for your employees and clients. Whether you need daily, weekly, or bi-weekly service, we work around your schedule with flexible options.</p>
+          <ul><li>Daily</li><li>Weekly</li><li>Bi-Weekly</li></ul>
+          <div class="links"><a href="#" class="arrow-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+      </article>
+    </div>
+
+    <article class="post rv" id="post-construction">
+      <div class="ph"><img src="images/post-construction.jpg" alt="Post construction debris being swept from a job site"></div>
+      <div class="bd">
+        <span class="eyebrow">Built. Renovated. Ready.</span>
+        <h3>Post Construction Cleaning</h3>
+        <p>We specialize in thorough post-construction and post-renovation cleaning to transform newly built or renovated spaces into clean, safe, and move-in ready homes and commercial properties in the Bow Valley.</p>
+        <div class="links">
+          <a href="#contact" class="btn btn-blue">Request a Quote</a>
+          <a href="#" class="btn btn-line">Learn More</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="valley">
+  <img src="images/bow-valley-three-sisters.jpg" alt="The Three Sisters peaks above Canmore in the Bow Valley">
+  <div class="wrap">
+    <h2 class="rv">Local to the <em>Bow Valley.</em></h2>
+    <div class="towns rv">
+      <div class="town">Canmore <small>Alberta</small></div>
+      <div class="town">Banff <small>Alberta</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info rv">
+      <span class="eyebrow">Contact Us</span>
+      <h2>Let's get your space sorted.</h2>
+      <p class="intro">Call, email or send the form and we'll be in touch by whichever you prefer.</p>
+      <div class="c-list">
+        <div class="c-item"><div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div><div><small>Phone</small><a href="tel:+14034976311">(403) 497-6311</a><br><a href="tel:+14164533690">416-453-3690</a></div></div>
+        <div class="c-item"><div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div><div><small>Email</small><a href="mailto:saltbluecleaning@gmail.com">saltbluecleaning@gmail.com</a></div></div>
+        <div class="c-item"><div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><small>Location</small><span>Bow Valley, Alberta</span></div></div>
+      </div>
+      <div class="socials">
+        <a href="https://www.instagram.com/saltblue_cleaningservices" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://www.facebook.com/Salt-Blue-Cleaning-Services" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg></a>
+      </div>
+    </div>
+
+    <form class="big-form rv" id="fullForm" novalidate>
+      <h3>Send Us a Message</h3>
+      <div class="sub">The more detail you share, the more accurate your quote.</div>
+      <div class="f3">
+        <div class="field"><label for="f-name">First name</label><input id="f-name" name="name" required></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel"></div>
+      </div>
+      <div class="f-row">
+        <div class="field"><label for="f-service">Select Service</label>
+          <select id="f-service" name="service" required>
+            <option value="">Choose a service</option>
+            <option>Residential Clean</option>
+            <option>Standard Clean</option>
+            <option>Deep Clean</option>
+            <option>Move-In/Move-Out Clean</option>
+            <option>Commercial Clean</option>
+            <option>Post Construction Cleaning</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-type">Property Type</label>
+          <select id="f-type" name="property">
+            <option value="">Choose property type</option>
+            <option>House</option>
+            <option>Condo / Apartment</option>
+            <option>Townhouse</option>
+            <option>Office / Commercial</option>
+            <option>New Build / Renovation</option>
+          </select>
+        </div>
+      </div>
+      <div class="f-row">
+        <div class="field"><label for="f-sqft">Approximate Square Footage</label><input id="f-sqft" name="sqft" placeholder="e.g. 1,800"></div>
+        <div class="field"><label for="f-rooms">Bedrooms, Bathrooms &amp; Dens</label><input id="f-rooms" name="rooms" placeholder="e.g. 3 bed, 2 bath, 1 den"></div>
+      </div>
+      <div class="field"><label>Request a callback</label></div>
+      <div class="pref">
+        <label><input type="radio" name="pref" value="Email preferred" checked> Email preferred</label>
+        <label><input type="radio" name="pref" value="Phone preferred"> Phone preferred</label>
+      </div>
+      <div class="field"><label for="f-info">Further Information</label><textarea id="f-info" name="info" rows="4" placeholder="Any pets or small children? Is this a one time or recurring request?"></textarea></div>
+      <div class="field"><label for="f-hear">How did you hear about us?</label>
+        <select id="f-hear" name="hear">
+          <option value="">Select one</option>
+          <option>Google</option>
+          <option>Instagram</option>
+          <option>Facebook</option>
+          <option>Friend or referral</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <button class="btn btn-blue" type="submit">Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <div class="form-ok">Thanks! Your email app will open with your request ready to send.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <div class="f-logo"><img src="images/salt-blue-logo.png" alt="Salt Blue Cleaning Services"></div>
+        <div class="f-tag">Local, Reliable, Consistent.</div>
+        <div class="socials">
+          <a href="https://www.instagram.com/saltblue_cleaningservices" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://www.facebook.com/Salt-Blue-Cleaning-Services" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="#">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#services">Services</a></li><li><a href="#">Customer Reviews</a></li><li><a href="#contact">Contact Us</a></li></ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul><li><a href="#services">Residential Cleaning</a></li><li><a href="#services">Commercial Cleaning</a></li><li><a href="#post-construction">Post Construction Cleaning</a></li></ul>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="tel:+14034976311">(403) 497-6311</a></li>
+          <li><a href="tel:+14164533690">416-453-3690</a></li>
+          <li><a href="mailto:saltbluecleaning@gmail.com">saltbluecleaning@gmail.com</a></li>
+          <li>Bow Valley, Alberta<br>Canmore &amp; Banff</li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© 2026 Salt Blue Cleaning Services. All Rights Reserved</span>
+      <span>Design by <a href="https://cleaningdigital.ca/" target="_blank" rel="noopener">Cleaning Digital</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// working quote forms: validate, then open a pre-filled email to Salt Blue
+function wire(form){
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    let ok=true;
+    form.querySelectorAll('[required]').forEach(f=>{
+      const bad=!f.value.trim()||(f.type==='email'&&!/^\S+@\S+\.\S+$/.test(f.value));
+      f.style.borderColor=bad?'#e0453a':'';
+      if(bad)ok=false;
+    });
+    if(!ok)return;
+    const labels={name:'First name',email:'Email',phone:'Phone',service:'Service',property:'Property type',sqft:'Approx. square footage',rooms:'Bedrooms, bathrooms & dens',pref:'Callback preference',info:'Further information',hear:'How did you hear about us'};
+    const d=new FormData(form);let body='';
+    for(const [k,v] of d.entries()){if(v)body+=(labels[k]||k)+': '+v+'\n';}
+    const subj='Quote request: '+(d.get('service')||'Cleaning')+' - '+d.get('name');
+    window.location.href='mailto:saltbluecleaning@gmail.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+    form.querySelector('.form-ok').style.display='block';
+  });
+}
+wire(document.getElementById('quickForm'));
+wire(document.getElementById('fullForm'));
+</script>
+</body>
+</html>
